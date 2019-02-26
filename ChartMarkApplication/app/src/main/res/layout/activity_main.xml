@@ -20,7 +20,30 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" >
+            <ImageButton
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:id="@+id/btnLoveList"
+                android:background="@drawable/icon_heart"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:onClick="clickToViewLoveList"
+                />
+            <ImageButton
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:id="@+id/btnCompareList"
+                android:background="@drawable/icon_list"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end"
+                android:onClick="clickToViewCompareList"
+                />
+        </android.support.v7.widget.Toolbar>
 
     </LinearLayout>
 
