@@ -10,7 +10,7 @@ public class CPU {
     public double averagePrice;
     public String cpuID;
     public String name;
-    public String brandID;
+    public String brandId;
     public String category;
     public String image1;
     public String image2;

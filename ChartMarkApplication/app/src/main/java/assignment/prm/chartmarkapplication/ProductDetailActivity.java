@@ -7,133 +7,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.Spinner;
 
-import com.squareup.moshi.JsonAdapter;
-import com.squareup.moshi.Moshi;
-import com.squareup.moshi.Types;
-
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.List;
-
-import assignment.prm.chartmarkapplication.Adapter.GeneralProductAdapter;
-import assignment.prm.chartmarkapplication.Adapter.LaptopAdapter;
-import assignment.prm.chartmarkapplication.Model.GeneralProduct;
-import assignment.prm.chartmarkapplication.Model.Laptop;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-public class ProductListActivity extends AppCompatActivity {
+public class ProductDetailActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
 
-    String category;
-    TextView txtCategory;
-    private RecyclerView rvProducts;
-    private ImageButton ibAddLove, ibAddCompare;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_list);
+        setContentView(R.layout.activity_product_detail);
         setMenu();
-        Intent intent = getIntent();
-        category = intent.getStringExtra("category");
-        if(category != null){
-            txtCategory = findViewById(R.id.txtCategory);
-            txtCategory.setText(category.toUpperCase());
-        }
-        showProducts();
-    }
-
-    private void bindEventAddToLoveButton(){
-        ibAddLove = findViewById(R.id.btn_add_love);
-    }
-
-    private void bindEventAddToCompareButton(){
-        ibAddCompare = findViewById(R.id.btn_add_compare);
-    }
-    private void addToLoveList(){
-
-    }
-
-    private void addToCompareList(){
-
-    }
-    private void showProducts() {
-        rvProducts = findViewById(R.id.rvProducts);
-        rvProducts.setLayoutManager(new GridLayoutManager(this, 2));
-
-        OkHttpClient okHttpClient = new OkHttpClient();
-        Moshi moshi = new Moshi.Builder().build();
-
-        Type productType = Types.newParameterizedType(List.class, GeneralProduct.class);
-        final JsonAdapter<List<GeneralProduct>> jsonAdapter = moshi.adapter(productType);
-
-        String domain = getResources().getString(R.string.home_api);
-//        String domain = getResources().getString(R.string.school_api);
-        Request request;
-
-        switch (category){
-            case "laptop":
-                request = new Request.Builder()
-                        .url(domain + "api/Laptops").build();
-                break;
-            case "cpu":
-                request = new Request.Builder()
-                        .url(domain + "api/CPUs").build();
-                break;
-            case "vga":
-                request = new Request.Builder()
-                        .url(domain + "api/VGAs").build();
-                break;
-            case "headphone":
-                request = new Request.Builder()
-                        .url(domain + "api/HeadPhones").build();
-                break;
-            case "mouse":
-                request = new Request.Builder()
-                        .url(domain + "api/Mouses").build();
-                break;
-            case "keyboard":
-                request = new Request.Builder()
-                        .url(domain + "api/Keyboards").build();
-                break;
-            default:
-                request = new Request.Builder()
-                        .url(domain + "api/Laptops").build();
-        }
-
-        okHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-                Log.e("Error: ", e.getMessage());
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String json = response.body().string();
-                final List<GeneralProduct> generalProducts = jsonAdapter.fromJson(json);
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        rvProducts.setAdapter(new GeneralProductAdapter(generalProducts, ProductListActivity.this));
-                    }
-                });
-            }
-        });
     }
 
     private void setMenu() {
