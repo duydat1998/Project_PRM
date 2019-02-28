@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Android_AssignmentModelStoreContainer" CdmEntityContainer="Android_AssignmentEntities">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="registerDate" ColumnName="registerDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="brandID" ColumnName="brandID" />
+          <ScalarProperty Name="brandName" ColumnName="brandName" />
+          <ScalarProperty Name="nation" ColumnName="nation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CPU">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.CPU">
+        <MappingFragment StoreEntitySet="CPU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="cpuID" ColumnName="cpuID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="socket" ColumnName="socket" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="clockSpeed" ColumnName="clockSpeed" />
+          <ScalarProperty Name="TDP" ColumnName="TDP" />
+          <ScalarProperty Name="thread" ColumnName="thread" />
+          <ScalarProperty Name="averagePrice" ColumnName="averagePrice" />
+          <ScalarProperty Name="image1" ColumnName="image1" />
+          <ScalarProperty Name="image2" ColumnName="image2" />
+          <ScalarProperty Name="image3" ColumnName="image3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeadPhone">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.HeadPhone">
+        <MappingFragment StoreEntitySet="HeadPhone">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="headphoneID" ColumnName="headphoneID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="micro" ColumnName="micro" />
+          <ScalarProperty Name="jack" ColumnName="jack" />
+          <ScalarProperty Name="frequencyRange" ColumnName="frequencyRange" />
+          <ScalarProperty Name="bluetooth" ColumnName="bluetooth" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="averagePrice" ColumnName="averagePrice" />
+          <ScalarProperty Name="image1" ColumnName="image1" />
+          <ScalarProperty Name="image2" ColumnName="image2" />
+          <ScalarProperty Name="image3" ColumnName="image3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keyboard">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.Keyboard">
+        <MappingFragment StoreEntitySet="Keyboard">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="keyboardID" ColumnName="keyboardID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="connect" ColumnName="connect" />
+          <ScalarProperty Name="bluetooth" ColumnName="bluetooth" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="averagePrice" ColumnName="averagePrice" />
+          <ScalarProperty Name="image1" ColumnName="image1" />
+          <ScalarProperty Name="image2" ColumnName="image2" />
+          <ScalarProperty Name="image3" ColumnName="image3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laptop">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.Laptop">
+        <MappingFragment StoreEntitySet="Laptop">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="laptopID" ColumnName="laptopID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="chip" ColumnName="chip" />
+          <ScalarProperty Name="ram" ColumnName="ram" />
+          <ScalarProperty Name="rom" ColumnName="rom" />
+          <ScalarProperty Name="screenSize" ColumnName="screenSize" />
+          <ScalarProperty Name="webcam" ColumnName="webcam" />
+          <ScalarProperty Name="wifi" ColumnName="wifi" />
+          <ScalarProperty Name="OS" ColumnName="OS" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="battery" ColumnName="battery" />
+          <ScalarProperty Name="averagePrice" ColumnName="averagePrice" />
+          <ScalarProperty Name="image1" ColumnName="image1" />
+          <ScalarProperty Name="image2" ColumnName="image2" />
+          <ScalarProperty Name="image3" ColumnName="image3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mouse">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.Mouse">
+        <MappingFragment StoreEntitySet="Mouse">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="mouseID" ColumnName="mouseID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="wireless" ColumnName="wireless" />
+          <ScalarProperty Name="bluetooth" ColumnName="bluetooth" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="averagePrice" ColumnName="averagePrice" />
+          <ScalarProperty Name="image1" ColumnName="image1" />
+          <ScalarProperty Name="image2" ColumnName="image2" />
+          <ScalarProperty Name="image3" ColumnName="image3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VGA">
+      <EntityTypeMapping TypeName="Android_AssignmentModel.VGA">
+        <MappingFragment StoreEntitySet="VGA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="vgaID" ColumnName="vgaID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="brandId" ColumnName="brandId" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="standardMemory" ColumnName="standardMemory" />
+          <ScalarProperty Name="maxScreenResolution" ColumnName="maxScreenResolution" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="averagePrice" ColumnName="averagePrice" />
+          <ScalarProperty Name="image1" ColumnName="image1" />
+          <ScalarProperty Name="image2" ColumnName="image2" />
+          <ScalarProperty Name="image3" ColumnName="image3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

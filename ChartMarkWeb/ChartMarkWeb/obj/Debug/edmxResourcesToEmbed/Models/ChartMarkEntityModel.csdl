@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Android_AssignmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="registerDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="brandID" />
+    </Key>
+    <Property Name="brandID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="brandName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="nation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CPU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cpuID" Type="String" MaxLength="7" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brandId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="socket" Type="Int32" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="clockSpeed" Type="Double" />
+    <Property Name="TDP" Type="Int32" />
+    <Property Name="thread" Type="Int32" />
+    <Property Name="averagePrice" Type="Double" />
+    <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HeadPhone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="headphoneID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brandId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="micro" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="jack" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="frequencyRange" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="bluetooth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="length" Type="Double" />
+    <Property Name="averagePrice" Type="Int32" />
+    <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Keyboard">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="keyboardID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brandId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="connect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bluetooth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="height" Type="Int32" />
+    <Property Name="length" Type="Int32" />
+    <Property Name="width" Type="Int32" />
+    <Property Name="averagePrice" Type="Int32" />
+    <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Laptop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="laptopID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brandId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="year" Type="Int32" />
+    <Property Name="chip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ram" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="rom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="screenSize" Type="Double" />
+    <Property Name="webcam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wifi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="battery" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="averagePrice" Type="Int32" />
+    <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mouse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mouseID" Type="String" MaxLength="9" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brandId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wireless" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bluetooth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="averagePrice" Type="Double" />
+    <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VGA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vgaID" Type="String" MaxLength="7" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="brandId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="standardMemory" Type="Int32" />
+    <Property Name="maxScreenResolution" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="size" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="averagePrice" Type="Double" />
+    <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Android_AssignmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="Brand" EntityType="Self.Brand" />
+    <EntitySet Name="CPU" EntityType="Self.CPU" />
+    <EntitySet Name="HeadPhone" EntityType="Self.HeadPhone" />
+    <EntitySet Name="Keyboard" EntityType="Self.Keyboard" />
+    <EntitySet Name="Laptop" EntityType="Self.Laptop" />
+    <EntitySet Name="Mouse" EntityType="Self.Mouse" />
+    <EntitySet Name="VGA" EntityType="Self.VGA" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Android_AssignmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAdmin">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="registerDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tblBrand">
+    <Key>
+      <PropertyRef Name="brandID" />
+    </Key>
+    <Property Name="brandID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="brandName" Type="nvarchar" MaxLength="20" />
+    <Property Name="nation" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblCPU">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="brandId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="socket" Type="int" />
+    <Property Name="weight" Type="float" />
+    <Property Name="clockSpeed" Type="float" />
+    <Property Name="TDP" Type="nchar" MaxLength="10" />
+    <Property Name="thread" Type="int" />
+    <Property Name="averagePrice" Type="int" Nullable="false" />
+    <Property Name="image1" Type="image" Nullable="false" />
+    <Property Name="image2" Type="image" />
+    <Property Name="image3" Type="image" />
+  </EntityType>
+  <EntityType Name="tblHeadPhone">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="brandId" Type="nvarchar" MaxLength="10" />
+    <Property Name="type" Type="nvarchar" MaxLength="20" />
+    <Property Name="micro" Type="nvarchar" MaxLength="10" />
+    <Property Name="jack" Type="nvarchar" MaxLength="10" />
+    <Property Name="frequencyRange" Type="nvarchar" MaxLength="20" />
+    <Property Name="bluetooth" Type="nvarchar" MaxLength="50" />
+    <Property Name="length" Type="float" />
+    <Property Name="averagePrice" Type="int" />
+    <Property Name="image1" Type="image" Nullable="false" />
+    <Property Name="image2" Type="image" />
+    <Property Name="image3" Type="image" />
+  </EntityType>
+  <EntityType Name="tblKeyboard">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="brandId" Type="nvarchar" MaxLength="10" />
+    <Property Name="connect" Type="nvarchar" MaxLength="50" />
+    <Property Name="bluetooth" Type="nvarchar" MaxLength="50" />
+    <Property Name="height" Type="int" />
+    <Property Name="length" Type="int" />
+    <Property Name="width" Type="int" />
+    <Property Name="averagePrice" Type="int" />
+    <Property Name="image1" Type="image" Nullable="false" />
+    <Property Name="image2" Type="image" />
+    <Property Name="image3" Type="image" />
+  </EntityType>
+  <EntityType Name="tblLaptop">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="brandId" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="year" Type="int" />
+    <Property Name="chip" Type="nvarchar" MaxLength="20" />
+    <Property Name="ram" Type="int" />
+    <Property Name="rom" Type="int" />
+    <Property Name="screenSize" Type="float" />
+    <Property Name="webcam" Type="nvarchar" MaxLength="20" />
+    <Property Name="wifi" Type="nvarchar" MaxLength="20" />
+    <Property Name="OS" Type="nvarchar" MaxLength="20" />
+    <Property Name="weight" Type="float" />
+    <Property Name="battery" Type="int" />
+    <Property Name="averagePrice" Type="int" />
+    <Property Name="image1" Type="image" Nullable="false" />
+    <Property Name="image2" Type="image" />
+    <Property Name="image3" Type="image" />
+  </EntityType>
+  <EntityType Name="tblMouse">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="10" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" />
+    <Property Name="brandId" Type="nvarchar" MaxLength="10" />
+    <Property Name="connect" Type="nvarchar" MaxLength="50" />
+    <Property Name="bluetooth" Type="nvarchar" MaxLength="50" />
+    <Property Name="weight" Type="int" />
+    <Property Name="averagePrice" Type="int" />
+    <Property Name="image1" Type="image" Nullable="false" />
+    <Property Name="image2" Type="image" />
+    <Property Name="image3" Type="image" />
+  </EntityType>
+  <EntityType Name="tblVGA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" />
+    <Property Name="brandId" Type="nvarchar" MaxLength="10" />
+    <Property Name="standardMemory" Type="int" />
+    <Property Name="maxScreenResolution" Type="float" />
+    <Property Name="weight" Type="float" />
+    <Property Name="size" Type="nvarchar" MaxLength="2" />
+    <Property Name="averagePrice" Type="int" />
+    <Property Name="image1" Type="image" Nullable="false" />
+    <Property Name="image2" Type="image" />
+    <Property Name="image3" Type="image" />
+  </EntityType>
+  <Association Name="FK_tblCPU_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="1" />
+    <End Role="tblCPU" Type="Self.tblCPU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="brandID" />
+      </Principal>
+      <Dependent Role="tblCPU">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblHeadPhone_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="0..1" />
+    <End Role="tblHeadPhone" Type="Self.tblHeadPhone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="brandID" />
+      </Principal>
+      <Dependent Role="tblHeadPhone">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblKeyboard_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="0..1" />
+    <End Role="tblKeyboard" Type="Self.tblKeyboard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="brandID" />
+      </Principal>
+      <Dependent Role="tblKeyboard">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLaptop_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="1" />
+    <End Role="tblLaptop" Type="Self.tblLaptop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="brandID" />
+      </Principal>
+      <Dependent Role="tblLaptop">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMouse_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="0..1" />
+    <End Role="tblMouse" Type="Self.tblMouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="brandID" />
+      </Principal>
+      <Dependent Role="tblMouse">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblVGA_tblBrand">
+    <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="0..1" />
+    <End Role="tblVGA" Type="Self.tblVGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBrand">
+        <PropertyRef Name="brandID" />
+      </Principal>
+      <Dependent Role="tblVGA">
+        <PropertyRef Name="brandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Android_AssignmentModelStoreContainer">
+    <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBrand" EntityType="Self.tblBrand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCPU" EntityType="Self.tblCPU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHeadPhone" EntityType="Self.tblHeadPhone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblKeyboard" EntityType="Self.tblKeyboard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLaptop" EntityType="Self.tblLaptop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMouse" EntityType="Self.tblMouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVGA" EntityType="Self.tblVGA" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblCPU_tblBrand" Association="Self.FK_tblCPU_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblCPU" EntitySet="tblCPU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblHeadPhone_tblBrand" Association="Self.FK_tblHeadPhone_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblHeadPhone" EntitySet="tblHeadPhone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblKeyboard_tblBrand" Association="Self.FK_tblKeyboard_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblKeyboard" EntitySet="tblKeyboard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLaptop_tblBrand" Association="Self.FK_tblLaptop_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblLaptop" EntitySet="tblLaptop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMouse_tblBrand" Association="Self.FK_tblMouse_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblMouse" EntitySet="tblMouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblVGA_tblBrand" Association="Self.FK_tblVGA_tblBrand">
+      <End Role="tblBrand" EntitySet="tblBrand" />
+      <End Role="tblVGA" EntitySet="tblVGA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
