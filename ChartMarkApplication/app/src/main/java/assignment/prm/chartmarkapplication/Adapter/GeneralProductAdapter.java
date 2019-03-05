@@ -39,7 +39,7 @@ public class GeneralProductAdapter extends RecyclerView.Adapter<GeneralProductAd
                 .load(generalProduct.image1)
                 .into(view.ivImageProduct);
         view.tvName.setText(generalProduct.name);
-        view.tvBrand.setText(generalProduct.brandId);
+        view.tvBrand.setText("Brand: " + generalProduct.brandId);
     }
 
     @Override

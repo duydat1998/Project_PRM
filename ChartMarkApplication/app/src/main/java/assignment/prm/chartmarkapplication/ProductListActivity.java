@@ -8,12 +8,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.squareup.moshi.JsonAdapter;
@@ -25,9 +23,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 import assignment.prm.chartmarkapplication.Adapter.GeneralProductAdapter;
-import assignment.prm.chartmarkapplication.Adapter.LaptopAdapter;
 import assignment.prm.chartmarkapplication.Model.GeneralProduct;
-import assignment.prm.chartmarkapplication.Model.Laptop;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -38,10 +34,9 @@ public class ProductListActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
 
-    String category;
-    TextView txtCategory;
+    private String category;
+    private TextView txtCategory;
     private RecyclerView rvProducts;
-    private ImageButton ibAddLove, ibAddCompare;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,20 +51,6 @@ public class ProductListActivity extends AppCompatActivity {
         showProducts();
     }
 
-    private void bindEventAddToLoveButton(){
-        ibAddLove = findViewById(R.id.btn_add_love);
-    }
-
-    private void bindEventAddToCompareButton(){
-        ibAddCompare = findViewById(R.id.btn_add_compare);
-    }
-    private void addToLoveList(){
-
-    }
-
-    private void addToCompareList(){
-
-    }
     private void showProducts() {
         rvProducts = findViewById(R.id.rvProducts);
         rvProducts.setLayoutManager(new GridLayoutManager(this, 2));
@@ -80,8 +61,9 @@ public class ProductListActivity extends AppCompatActivity {
         Type productType = Types.newParameterizedType(List.class, GeneralProduct.class);
         final JsonAdapter<List<GeneralProduct>> jsonAdapter = moshi.adapter(productType);
 
-        String domain = getResources().getString(R.string.home_api);
+//        String domain = getResources().getString(R.string.home_api);
 //        String domain = getResources().getString(R.string.school_api);
+        String domain = getResources().getString(R.string.virtual_api);
         Request request;
 
         switch (category){
@@ -118,11 +100,12 @@ public class ProductListActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
-                Log.e("Error: ", e.getMessage());
+                Log.e("Get data API Error: ", e.getMessage());
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+
                 String json = response.body().string();
                 final List<GeneralProduct> generalProducts = jsonAdapter.fromJson(json);
 

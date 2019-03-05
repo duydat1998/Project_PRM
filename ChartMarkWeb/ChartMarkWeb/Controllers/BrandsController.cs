@@ -129,5 +129,18 @@ namespace ChartMarkWeb.Controllers
         {
             return db.Brand.Count(e => e.brandID == id) > 0;
         }
+
+        [ResponseType(typeof(string))]
+        [ActionName("Name")]
+        public string GetBrandNameByID(string id)
+        {
+            string name = "";
+            if (BrandExists(id))
+            {
+                Brand brand = db.Brand.Find(id);
+                name = brand.brandName;
+            }
+            return name;
+        }
     }
 }
